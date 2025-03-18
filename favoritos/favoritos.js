@@ -1,7 +1,7 @@
 const url = "http://localhost:8080/filmes"
 
-function carregarFilmes() {
-    fetch(url)
+function carregarFavoritos(){
+    fetch(`${url}/favoritos`)
         .then(response => response.json())
         .then(filmes => {
             let lista = document.querySelector("#lista")
@@ -9,32 +9,8 @@ function carregarFilmes() {
             filmes.forEach(filme => lista.innerHTML += card(filme))
         })
 }
- 
-function favoritar(id) {
-    const config = {
-        method: "PUT",
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }
 
-    fetch(`${url}/${id}`, config)
-        .then(response => response.json())
-        .then(() => carregarFilmes())
-        
-}
-
-function apagar(id) {
-    const config = {
-        method: "DELETE"
-    }
-
-    fetch(`${url}/${id}`, config)
-        .then(() => carregarFilmes())
-}
-
-
-carregarFilmes()
+carregarFavoritos()
 
 function card(filme) {
     return `
@@ -53,13 +29,6 @@ function card(filme) {
                         <i class="bi bi-play-btn-fill"></i>
                         Ver Trailer
                         </a>
-                        <button class="btn btn-primary" id="btn-favoritar" onclick="favoritar(${filme.id})">                        
-                            ${filme.favorito ? '<i class="bi bi-heart-fill"></i>' : '<i class="bi bi-heart"></i>'}
-                        </button>
-                        <button class="btn btn-danger" id="btn-apagar" onclick="apagar(${filme.id})">
-                            <i class="bi bi-trash"></i>
-                        </button>
-
                     </div>
                 </div>
             </div>

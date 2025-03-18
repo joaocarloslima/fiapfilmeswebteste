@@ -1,4 +1,4 @@
-const url = "https://fiapfilmesteste-production.up.railway.app/filmes"
+const url = "http://localhost:8080/filmes"
 const alert = document.querySelector("#alert")
 
 document.querySelector("form").addEventListener("submit", event =>{
