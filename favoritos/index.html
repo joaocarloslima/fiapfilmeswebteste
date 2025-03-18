@@ -10,7 +10,7 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <script src="./cadastro.js" defer></script>
+    <script src="./home.js" defer></script>
     <title>FIAP Filmes</title>
 </head>
 
@@ -35,13 +35,13 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">
+                        <a class="nav-link" href="../cadastro">
                             <i class="bi bi-plus-circle-fill"></i>
                             Cadastrar
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../favoritos">
+                        <a class="nav-link active" aria-current="page" href="#">
                             <i class="bi bi-heart-fill"></i>
                             Favoritos
                         </a>
@@ -51,39 +51,11 @@
         </div>
     </nav>
 
-    <div class="container-fluid">
-        <h2>Cadastrar Filme</h2>
-        <div class="card m-4" >
-            <form class="p-4">
-                <div class="mb-3">
-                    <label for="titulo" class="form-label">Título</label>
-                    <input name="titulo" type="text" class="form-control" id="titulo" aria-describedby="movie title">
-                </div>
-                <div class="mb-3">
-                    <label for="generos" class="form-label">Gêneros</label>
-                    <input name="generos" type="text" class="form-control" id="generos" aria-describedby="movie gender">
-                </div>
-                <div class="mb-3">
-                    <label for="sinopse" class="form-label">Sinopse</label>
-                    <textarea name="sinopse" class="form-control" id="sinopse" rows="3"></textarea>
-                </div>
-                <div class="mb-3">
-                    <label for="poster" class="form-label">Poster Link</label>
-                    <input name="poster" type="text" class="form-control" id="poster" aria-describedby="movie poster">
-                </div>
-                <div class="mb-3">
-                    <label for="trailer" class="form-label">Trailer Link</label>
-                    <input name="trailer" type="text" class="form-control" id="trailer" aria-describedby="movie trailer">
-                </div>
-                <button type="submit" class="btn btn-primary">
-                    <i class="bi bi-check-circle-fill"></i>
-                    Salvar
-                </button>
-                <div class="alert alert-danger mt-4 d-none" role="alert" id="alert"></div>
-            </form>
-        </div>
-    </div>
+    <div class="container-fluid" id="lista"></div>
 
+    <script>
+        carregarFavoritos()
+    </script>
 
 </body>
 

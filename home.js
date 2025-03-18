@@ -33,6 +33,16 @@ function apagar(id) {
         .then(() => carregarFilmes())
 }
 
+function carregarFavoritos(){
+    fetch(`${url}/favoritos`)
+        .then(response => response.json())
+        .then(filmes => {
+            let lista = document.querySelector("#lista")
+            lista.innerHTML = ""
+            filmes.forEach(filme => lista.innerHTML += card(filme))
+        })
+}
+
 carregarFilmes()
 
 function card(filme) {
