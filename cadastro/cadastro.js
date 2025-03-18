@@ -1,4 +1,4 @@
-const url = "http://fiapfilmesteste-production.up.railway.app"
+const url = "https://fiapfilmesteste-production.up.railway.app"
 const alert = document.querySelector("#alert")
 
 document.querySelector("form").addEventListener("submit", event =>{
