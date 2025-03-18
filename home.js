@@ -1,4 +1,4 @@
-const url = "http://localhost:8080/filmes"
+const url = "http://fiapfilmesteste-production.up.railway.app"
 
 function carregarFilmes() {
     fetch(url)
