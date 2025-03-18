@@ -18,7 +18,7 @@ document.querySelector("form").addEventListener("submit", event =>{
 
     fetch(url, config)
         .then(response => response.json())
-        .then(() => window.location.href = "/")
+        .then(() => window.location.href = "../")
         .catch(error => {
             alert.classList.remove("d-none")
             alert.innerText = error.message
