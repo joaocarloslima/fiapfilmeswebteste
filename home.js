@@ -1,4 +1,4 @@
-const url = "https://fiapfilmesteste-production.up.railway.app"
+const url = "https://fiapfilmesteste-production.up.railway.app/filmes"
 
 function carregarFilmes() {
     fetch(url)
