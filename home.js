@@ -6,6 +6,15 @@ function carregarFilmes() {
         .then(filmes => {
             let lista = document.querySelector("#lista")
             lista.innerHTML = ""
+
+            if(filmes.length == 0){
+                lista.innerHTML = `
+                    <div class="alert alert-info" role="alert">
+                        nenhum filme cadastrado
+                    </div>`                
+                return
+            }
+
             filmes.forEach(filme => lista.innerHTML += card(filme))
         })
 }
